@@ -12,6 +12,7 @@ struct TerminalTab: Identifiable, Equatable {
     var endMessage: String?
     var dtr: Bool
     var rts: Bool
+    var transfer: ZmodemProgress? = nil
 }
 
 enum SidebarSelection: Hashable {
@@ -86,6 +87,14 @@ final class AppModel: ObservableObject {
         controller.onViewReplaced = { [weak self] in
             self?.objectWillChange.send()
         }
+        controller.onTransferProgress = { [weak self] progress in
+            self?.updateTab(tabID) {
+                $0.transfer = progress
+            }
+        }
+        controller.onNotice = { [weak self] message in
+            self?.alertMessage = message
+        }
         controllers[tabID] = controller
         tabs.append(TerminalTab(
             id: tabID,
@@ -157,6 +166,17 @@ final class AppModel: ObservableObject {
         guard let id = selectedTabID else { return }
         updateTab(id) { $0.rts = enabled }
         controllers[id]?.setRTS(enabled)
+    }
+
+    func sendDroppedFiles(_ urls: [URL]) {
+        guard let id = selectedTabID,
+              let tab = tabs.first(where: { $0.id == id }),
+              tab.kind == .serial,
+              !tab.ended else {
+            alertMessage = "把文件拖到已连接的串口窗口"
+            return
+        }
+        controllers[id]?.sendFiles(urls)
     }
 
     func beginNewSession(kind: SessionKind = .ssh) {

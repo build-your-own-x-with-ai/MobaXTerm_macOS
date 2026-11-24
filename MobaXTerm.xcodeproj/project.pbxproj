@@ -16,14 +16,17 @@
 		5ED535E2CEA995A831B6ACE6 /* SwiftTerm in Frameworks */ = {isa = PBXBuildFile; productRef = 21EA3CAB74FE2613A192B60E /* SwiftTerm */; };
 		681E206507C926CAEE6E0F0D /* SSHCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9A7FBD42FCF333E5F5F39 /* SSHCommandTests.swift */; };
 		6CCA6B598162B193E4D96D21 /* SessionStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8897C08E360F308C12247 /* SessionStoreTests.swift */; };
+		6D2667D56952FA6A2D00FCCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E9D16DEE0A26C1ADEDB7ECF /* Assets.xcassets */; };
 		75A25F8FDC8EB01E43E3EAB7 /* TerminalHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF30D66DF9B1692D2202CD84 /* TerminalHostView.swift */; };
 		79051E7A24190EAFFA5FFB92 /* SerialConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2974D2752DF82DFB9F5410E0 /* SerialConfigTests.swift */; };
 		86B5C0F8D5E66140A41AD311 /* MobaXTermUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6916CE4DE56DD45366A18444 /* MobaXTermUITests.swift */; };
+		8B5BB8108FD9FFF554D34182 /* Zmodem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6598A4920FB37D9B59FBE082 /* Zmodem.swift */; };
 		92CD375B4D7AC59F2266C46E /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA16996BD0CCE45AA1C97D /* AppModel.swift */; };
 		9549D22B4A0DFD332A7F0D6B /* TerminalTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AE9F427A37E80B4E2D0197 /* TerminalTabBar.swift */; };
 		9D65D3EFAB8B5A1C6922A9CD /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80FD4CF27078B0C43C2963F /* SessionStore.swift */; };
 		C1E24F0296328D90CE42C333 /* SerialConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D1C109EFFA6D5C5EE11D1 /* SerialConfig.swift */; };
 		C849326777183C628EF4DD71 /* MobaXTermApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CEE117578E588339100B47 /* MobaXTermApp.swift */; };
+		C9FBA61CAE11718D1685C314 /* ZmodemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6B1AB844F88C9BB9739179 /* ZmodemTests.swift */; };
 		D1C2C3D6AF67FB4207DE7D9B /* SerialPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6100445D444EF8F4C04EE3F8 /* SerialPort.swift */; };
 		DD35144D1F3AB36B2D3BC1CE /* SessionEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E008AE7583F7843F39704453 /* SessionEditor.swift */; };
 /* End PBXBuildFile section */
@@ -49,13 +52,16 @@
 		080FA463557AF5AB762A85C5 /* MobaXTermTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobaXTermTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		167F6C31BDC0FD205A51E082 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		2974D2752DF82DFB9F5410E0 /* SerialConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialConfigTests.swift; sourceTree = "<group>"; };
+		2E6B1AB844F88C9BB9739179 /* ZmodemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZmodemTests.swift; sourceTree = "<group>"; };
 		33CA16996BD0CCE45AA1C97D /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		39A7B83BBB6C4B35381D5D40 /* SSHCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSHCommand.swift; sourceTree = "<group>"; };
 		3C91B585A9F63672F62C2A13 /* TerminalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalController.swift; sourceTree = "<group>"; };
+		4E9D16DEE0A26C1ADEDB7ECF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5275B7329599D803486B9B26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		53D9A7FBD42FCF333E5F5F39 /* SSHCommandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSHCommandTests.swift; sourceTree = "<group>"; };
 		6100445D444EF8F4C04EE3F8 /* SerialPort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialPort.swift; sourceTree = "<group>"; };
 		64D0D43E2BC61D2AA3E9F341 /* MobaXTerm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobaXTerm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6598A4920FB37D9B59FBE082 /* Zmodem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zmodem.swift; sourceTree = "<group>"; };
 		6916CE4DE56DD45366A18444 /* MobaXTermUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobaXTermUITests.swift; sourceTree = "<group>"; };
 		7DA8897C08E360F308C12247 /* SessionStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStoreTests.swift; sourceTree = "<group>"; };
 		91AE9F427A37E80B4E2D0197 /* TerminalTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalTabBar.swift; sourceTree = "<group>"; };
@@ -98,6 +104,7 @@
 				2974D2752DF82DFB9F5410E0 /* SerialConfigTests.swift */,
 				7DA8897C08E360F308C12247 /* SessionStoreTests.swift */,
 				53D9A7FBD42FCF333E5F5F39 /* SSHCommandTests.swift */,
+				2E6B1AB844F88C9BB9739179 /* ZmodemTests.swift */,
 			);
 			path = MobaXTermTests;
 			sourceTree = "<group>";
@@ -106,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				33CA16996BD0CCE45AA1C97D /* AppModel.swift */,
+				4E9D16DEE0A26C1ADEDB7ECF /* Assets.xcassets */,
 				E7CEE117578E588339100B47 /* MobaXTermApp.swift */,
 				2420E8D6434B64309CB55175 /* Models */,
 				979C55574AE3F861E116FD31 /* Serial */,
@@ -150,6 +158,7 @@
 				F64D1C109EFFA6D5C5EE11D1 /* SerialConfig.swift */,
 				6100445D444EF8F4C04EE3F8 /* SerialPort.swift */,
 				DF982BB3F47D55906064C7F0 /* SerialPortEnumerator.swift */,
+				6598A4920FB37D9B59FBE082 /* Zmodem.swift */,
 			);
 			path = Serial;
 			sourceTree = "<group>";
@@ -198,6 +207,7 @@
 			buildConfigurationList = 3123A68AF41016057668D831 /* Build configuration list for PBXNativeTarget "MobaXTerm" */;
 			buildPhases = (
 				70D849FE1059D29ADCF333FF /* Sources */,
+				C14EA5EC6FD31F7167837AF8 /* Resources */,
 				A376F92B0687100651F2BA7D /* Frameworks */,
 			);
 			buildRules = (
@@ -278,6 +288,17 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		C14EA5EC6FD31F7167837AF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D2667D56952FA6A2D00FCCC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		41540DA7C39864F3221A2566 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -294,6 +315,7 @@
 				681E206507C926CAEE6E0F0D /* SSHCommandTests.swift in Sources */,
 				79051E7A24190EAFFA5FFB92 /* SerialConfigTests.swift in Sources */,
 				6CCA6B598162B193E4D96D21 /* SessionStoreTests.swift in Sources */,
+				C9FBA61CAE11718D1685C314 /* ZmodemTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +337,7 @@
 				4F9E151645895F407CE04623 /* TerminalController.swift in Sources */,
 				75A25F8FDC8EB01E43E3EAB7 /* TerminalHostView.swift in Sources */,
 				9549D22B4A0DFD332A7F0D6B /* TerminalTabBar.swift in Sources */,
+				8B5BB8108FD9FFF554D34182 /* Zmodem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

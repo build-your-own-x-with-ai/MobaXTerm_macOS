@@ -12,12 +12,19 @@ final class TerminalController: NSObject {
     var onEnded: ((String) -> Void)?
     var onModem: ((Bool, Bool) -> Void)?
     var onViewReplaced: (() -> Void)?
+    var onTransferProgress: ((ZmodemProgress?) -> Void)?
+    var onNotice: ((String) -> Void)?
 
     private let launch: Launch
     private var processView: LocalProcessTerminalView?
     private var serialTerminal: TerminalView?
     private var serialPort: SerialPort?
     private var serialSettings: SerialSettings?
+    private var transfer: ZmodemSender?
+    private var transferTimer: DispatchWorkItem?
+    private var launchedRemote = false
+    private var rxTail: [UInt8] = []
+    private var lastZrinitAt: Date?
     private var started = false
     private var acceptEnd = true
     private var reportedEnd = false
@@ -79,6 +86,7 @@ final class TerminalController: NSObject {
     }
 
     func reconnect() {
+        cancelTransfer()
         acceptEnd = false
         generation += 1
         let oldPort = serialPort
@@ -102,6 +110,7 @@ final class TerminalController: NSObject {
     func stop() {
         acceptEnd = false
         generation += 1
+        cancelTransfer()
         stopResources()
     }
 
@@ -113,6 +122,58 @@ final class TerminalController: NSObject {
     func setRTS(_ enabled: Bool) {
         serialPort?.setRequestToSend(enabled)
         publishModem()
+    }
+
+    func sendFiles(_ urls: [URL]) {
+        guard kind == .serial else {
+            onNotice?("把文件拖到已连接的串口窗口")
+            return
+        }
+        guard serialPort != nil, !reportedEnd else {
+            onNotice?("串口还没有连上")
+            return
+        }
+        guard transfer == nil else {
+            onNotice?("正在发送文件")
+            return
+        }
+        var files: [ZmodemFile] = []
+        for url in urls {
+            var isDirectory: ObjCBool = false
+            guard FileManager.default.fileExists(atPath: url.path, isDirectory: &isDirectory), !isDirectory.boolValue else {
+                onNotice?("不能发送文件夹")
+                return
+            }
+            do {
+                let data = try Data(contentsOf: url)
+                let attributes = try? FileManager.default.attributesOfItem(atPath: url.path)
+                let modified = attributes?[.modificationDate] as? Date ?? Date()
+                let mode = (attributes?[.posixPermissions] as? NSNumber)?.uint16Value ?? 0
+                files.append(ZmodemFile(
+                    name: url.lastPathComponent.precomposedStringWithCanonicalMapping,
+                    bytes: [UInt8](data),
+                    modified: modified,
+                    mode: mode
+                ))
+            } catch {
+                onNotice?("无法读取 \(url.lastPathComponent)")
+                return
+            }
+        }
+        guard !files.isEmpty else { return }
+        let sender = ZmodemSender(files: files)
+        transfer = sender
+        let names = files.map(\.name).joined(separator: "、")
+        if rzIsWaiting {
+            lastZrinitAt = nil
+            serialTerminal?.feed(text: "\r\n[发送 \(names)]\r\n")
+        } else {
+            launchedRemote = true
+            let command = translateOutgoing(Array("rz\r".utf8), newline: serialSettings?.newline ?? .raw)
+            serialPort?.write(command)
+            serialTerminal?.feed(text: "\r\n[启动 rz，发送 \(names)]\r\n")
+        }
+        applyTransfer(sender.start())
     }
 
     private func buildView() {
@@ -159,8 +220,10 @@ final class TerminalController: NSObject {
     private func openSerial(_ settings: SerialSettings, token: Int) {
         let port = SerialPort()
         let terminal = serialTerminal
-        port.onData = { bytes in
-            terminal?.feed(byteArray: bytes[...])
+        port.onData = { [weak self] bytes in
+            Task { @MainActor in
+                self?.ingestSerial(bytes)
+            }
         }
         port.onDisconnect = { [weak self] message in
             Task { @MainActor in
@@ -183,6 +246,7 @@ final class TerminalController: NSObject {
     }
 
     private func reportEnd(_ message: String) {
+        cancelTransfer()
         guard acceptEnd, !reportedEnd else { return }
         reportedEnd = true
         let terminal = serialTerminal ?? processView
@@ -222,7 +286,89 @@ final class TerminalController: NSObject {
         reportEnd("无法启动进程：\(describe(error))")
     }
 
+    private func ingestSerial(_ bytes: [UInt8]) {
+        guard let transfer else {
+            rememberZrinit(bytes)
+            serialTerminal?.feed(byteArray: bytes[...])
+            return
+        }
+        if transfer.showsRemoteText {
+            serialTerminal?.feed(byteArray: bytes[...])
+        }
+        applyTransfer(transfer.receive(bytes))
+    }
+
+    private var rzIsWaiting: Bool {
+        guard let lastZrinitAt else { return false }
+        return Date().timeIntervalSince(lastZrinitAt) < 15
+    }
+
+    private func rememberZrinit(_ bytes: [UInt8]) {
+        rxTail.append(contentsOf: bytes)
+        if rxTail.count > 96 {
+            rxTail.removeFirst(rxTail.count - 96)
+        }
+        let marker: [UInt8] = [0x18, 0x42, 0x30, 0x31]
+        guard rxTail.count >= marker.count else { return }
+        for start in 0...(rxTail.count - marker.count) where Array(rxTail[start..<(start + marker.count)]) == marker {
+            lastZrinitAt = Date()
+            return
+        }
+    }
+
+    private func applyTransfer(_ step: ZmodemStep) {
+        if !step.outgoing.isEmpty {
+            serialPort?.write(step.outgoing)
+        }
+        if var progress = step.progress {
+            if progress.phase == .waiting, launchedRemote {
+                progress.phase = .launching
+            }
+            onTransferProgress?(progress)
+            armTransferTimeout()
+        } else if step.status != nil {
+            armTransferTimeout()
+        }
+        if let failure = step.failure {
+            finishTransfer(failure, success: false)
+            return
+        }
+        if let finished = step.finished {
+            finishTransfer(finished, success: true)
+        }
+    }
+
+    private func armTransferTimeout() {
+        transferTimer?.cancel()
+        let work = DispatchWorkItem { [weak self] in
+            self?.finishTransfer("没有收到 rz 的应答。请确认当前是 shell 提示符，并且系统里有 rz", success: false)
+        }
+        transferTimer = work
+        DispatchQueue.main.asyncAfter(deadline: .now() + 20, execute: work)
+    }
+
+    private func finishTransfer(_ message: String, success: Bool) {
+        transferTimer?.cancel()
+        transferTimer = nil
+        transfer = nil
+        launchedRemote = false
+        onTransferProgress?(nil)
+        serialTerminal?.feed(text: "\r\n[\(message)]\r\n")
+        if !success {
+            serialPort?.write(Array(repeating: ZmodemKind.zdle, count: 8))
+        }
+    }
+
+    private func cancelTransfer() {
+        transferTimer?.cancel()
+        transferTimer = nil
+        transfer = nil
+        launchedRemote = false
+        onTransferProgress?(nil)
+    }
+
     fileprivate func sendSerial(_ data: ArraySlice<UInt8>, source: TerminalView) {
+        guard transfer == nil else { return }
         guard let settings = serialSettings else { return }
         let translated = translateOutgoing(Array(data), newline: settings.newline)
         serialPort?.write(translated)

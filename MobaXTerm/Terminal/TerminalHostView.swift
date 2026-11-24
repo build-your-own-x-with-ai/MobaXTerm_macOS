@@ -4,6 +4,7 @@ import SwiftUI
 struct TerminalHostView: NSViewRepresentable {
     var controllers: [TerminalController]
     var selectedID: UUID?
+    var onDropFiles: ([URL]) -> Void
 
     func makeNSView(context: Context) -> TerminalContainerView {
         TerminalContainerView()
@@ -12,6 +13,7 @@ struct TerminalHostView: NSViewRepresentable {
     func updateNSView(_ nsView: TerminalContainerView, context: Context) {
         let focusChanged = context.coordinator.lastSelected != selectedID
         context.coordinator.lastSelected = selectedID
+        nsView.onDropFiles = onDropFiles
         nsView.sync(controllers: controllers, selectedID: selectedID, focus: focusChanged)
     }
 
@@ -25,8 +27,18 @@ struct TerminalHostView: NSViewRepresentable {
 }
 
 final class TerminalContainerView: NSView {
+    var onDropFiles: (([URL]) -> Void)?
     private var controllers: [TerminalController] = []
     private var selectedID: UUID?
+
+    override init(frame frameRect: NSRect) {
+        super.init(frame: frameRect)
+        registerForDraggedTypes([.fileURL])
+    }
+
+    required init?(coder: NSCoder) {
+        nil
+    }
 
     func sync(controllers: [TerminalController], selectedID: UUID?, focus: Bool) {
         self.controllers = controllers
@@ -62,5 +74,27 @@ final class TerminalContainerView: NSView {
             controller.view.frame = bounds
             controller.ensureStarted()
         }
+    }
+
+    override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
+        fileURLs(from: sender).isEmpty ? [] : .copy
+    }
+
+    override func draggingUpdated(_ sender: NSDraggingInfo) -> NSDragOperation {
+        draggingEntered(sender)
+    }
+
+    override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
+        let urls = fileURLs(from: sender)
+        guard !urls.isEmpty else { return false }
+        onDropFiles?(urls)
+        return true
+    }
+
+    private func fileURLs(from sender: NSDraggingInfo) -> [URL] {
+        sender.draggingPasteboard.readObjects(
+            forClasses: [NSURL.self],
+            options: [.urlReadingFileURLsOnly: true]
+        ) as? [URL] ?? []
     }
 }
