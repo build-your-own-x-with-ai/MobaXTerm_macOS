@@ -1,0 +1,639 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1C28193FE2DD82D937E47FCA /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167F6C31BDC0FD205A51E082 /* SidebarView.swift */; };
+		39761F934D37D2655B90FAFA /* SerialPortEnumerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF982BB3F47D55906064C7F0 /* SerialPortEnumerator.swift */; };
+		4E2619C3981905FDF31D367E /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1D0BDA80596563EB97B4D3 /* Session.swift */; };
+		4F9E151645895F407CE04623 /* TerminalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C91B585A9F63672F62C2A13 /* TerminalController.swift */; };
+		52386088E0515CFD168E5159 /* SSHCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7B83BBB6C4B35381D5D40 /* SSHCommand.swift */; };
+		52AF40F42B4826EFDD688C75 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5275B7329599D803486B9B26 /* ContentView.swift */; };
+		5ED535E2CEA995A831B6ACE6 /* SwiftTerm in Frameworks */ = {isa = PBXBuildFile; productRef = 21EA3CAB74FE2613A192B60E /* SwiftTerm */; };
+		681E206507C926CAEE6E0F0D /* SSHCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9A7FBD42FCF333E5F5F39 /* SSHCommandTests.swift */; };
+		6CCA6B598162B193E4D96D21 /* SessionStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8897C08E360F308C12247 /* SessionStoreTests.swift */; };
+		75A25F8FDC8EB01E43E3EAB7 /* TerminalHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF30D66DF9B1692D2202CD84 /* TerminalHostView.swift */; };
+		79051E7A24190EAFFA5FFB92 /* SerialConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2974D2752DF82DFB9F5410E0 /* SerialConfigTests.swift */; };
+		86B5C0F8D5E66140A41AD311 /* MobaXTermUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6916CE4DE56DD45366A18444 /* MobaXTermUITests.swift */; };
+		92CD375B4D7AC59F2266C46E /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA16996BD0CCE45AA1C97D /* AppModel.swift */; };
+		9549D22B4A0DFD332A7F0D6B /* TerminalTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AE9F427A37E80B4E2D0197 /* TerminalTabBar.swift */; };
+		9D65D3EFAB8B5A1C6922A9CD /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80FD4CF27078B0C43C2963F /* SessionStore.swift */; };
+		C1E24F0296328D90CE42C333 /* SerialConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D1C109EFFA6D5C5EE11D1 /* SerialConfig.swift */; };
+		C849326777183C628EF4DD71 /* MobaXTermApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CEE117578E588339100B47 /* MobaXTermApp.swift */; };
+		D1C2C3D6AF67FB4207DE7D9B /* SerialPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6100445D444EF8F4C04EE3F8 /* SerialPort.swift */; };
+		DD35144D1F3AB36B2D3BC1CE /* SessionEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E008AE7583F7843F39704453 /* SessionEditor.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		997681EA40D33751F94FB408 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6233CCBED7E82A943E8AC01 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5EDB8A76C52205FBA691E10;
+			remoteInfo = MobaXTerm;
+		};
+		A8C9253892A7D83A3ADC55AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6233CCBED7E82A943E8AC01 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5EDB8A76C52205FBA691E10;
+			remoteInfo = MobaXTerm;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		080FA463557AF5AB762A85C5 /* MobaXTermTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobaXTermTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		167F6C31BDC0FD205A51E082 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		2974D2752DF82DFB9F5410E0 /* SerialConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialConfigTests.swift; sourceTree = "<group>"; };
+		33CA16996BD0CCE45AA1C97D /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		39A7B83BBB6C4B35381D5D40 /* SSHCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSHCommand.swift; sourceTree = "<group>"; };
+		3C91B585A9F63672F62C2A13 /* TerminalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalController.swift; sourceTree = "<group>"; };
+		5275B7329599D803486B9B26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		53D9A7FBD42FCF333E5F5F39 /* SSHCommandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSHCommandTests.swift; sourceTree = "<group>"; };
+		6100445D444EF8F4C04EE3F8 /* SerialPort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialPort.swift; sourceTree = "<group>"; };
+		64D0D43E2BC61D2AA3E9F341 /* MobaXTerm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobaXTerm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6916CE4DE56DD45366A18444 /* MobaXTermUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobaXTermUITests.swift; sourceTree = "<group>"; };
+		7DA8897C08E360F308C12247 /* SessionStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStoreTests.swift; sourceTree = "<group>"; };
+		91AE9F427A37E80B4E2D0197 /* TerminalTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalTabBar.swift; sourceTree = "<group>"; };
+		B80FD4CF27078B0C43C2963F /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		BB1D0BDA80596563EB97B4D3 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		D6A81AFF316949988A8D8C08 /* MobaXTermUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobaXTermUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF982BB3F47D55906064C7F0 /* SerialPortEnumerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialPortEnumerator.swift; sourceTree = "<group>"; };
+		E008AE7583F7843F39704453 /* SessionEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionEditor.swift; sourceTree = "<group>"; };
+		E7CEE117578E588339100B47 /* MobaXTermApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobaXTermApp.swift; sourceTree = "<group>"; };
+		EF30D66DF9B1692D2202CD84 /* TerminalHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalHostView.swift; sourceTree = "<group>"; };
+		F64D1C109EFFA6D5C5EE11D1 /* SerialConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialConfig.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A376F92B0687100651F2BA7D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ED535E2CEA995A831B6ACE6 /* SwiftTerm in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08AD0F47A413DFFE138FDF66 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5275B7329599D803486B9B26 /* ContentView.swift */,
+				E008AE7583F7843F39704453 /* SessionEditor.swift */,
+				167F6C31BDC0FD205A51E082 /* SidebarView.swift */,
+				91AE9F427A37E80B4E2D0197 /* TerminalTabBar.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		129A597F2C14AA65CBCC9B43 /* MobaXTermTests */ = {
+			isa = PBXGroup;
+			children = (
+				2974D2752DF82DFB9F5410E0 /* SerialConfigTests.swift */,
+				7DA8897C08E360F308C12247 /* SessionStoreTests.swift */,
+				53D9A7FBD42FCF333E5F5F39 /* SSHCommandTests.swift */,
+			);
+			path = MobaXTermTests;
+			sourceTree = "<group>";
+		};
+		220F30006BC9254AAA8022F0 /* MobaXTerm */ = {
+			isa = PBXGroup;
+			children = (
+				33CA16996BD0CCE45AA1C97D /* AppModel.swift */,
+				E7CEE117578E588339100B47 /* MobaXTermApp.swift */,
+				2420E8D6434B64309CB55175 /* Models */,
+				979C55574AE3F861E116FD31 /* Serial */,
+				FE6B0F8CA227824DBF0E2E81 /* Terminal */,
+				08AD0F47A413DFFE138FDF66 /* UI */,
+			);
+			path = MobaXTerm;
+			sourceTree = "<group>";
+		};
+		2420E8D6434B64309CB55175 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BB1D0BDA80596563EB97B4D3 /* Session.swift */,
+				B80FD4CF27078B0C43C2963F /* SessionStore.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6386983E752ED8B4AA76739C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				64D0D43E2BC61D2AA3E9F341 /* MobaXTerm.app */,
+				080FA463557AF5AB762A85C5 /* MobaXTermTests.xctest */,
+				D6A81AFF316949988A8D8C08 /* MobaXTermUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		845850DC3E362959E856E906 = {
+			isa = PBXGroup;
+			children = (
+				220F30006BC9254AAA8022F0 /* MobaXTerm */,
+				129A597F2C14AA65CBCC9B43 /* MobaXTermTests */,
+				F105E9BE3F96F2E4E067C462 /* MobaXTermUITests */,
+				6386983E752ED8B4AA76739C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		979C55574AE3F861E116FD31 /* Serial */ = {
+			isa = PBXGroup;
+			children = (
+				F64D1C109EFFA6D5C5EE11D1 /* SerialConfig.swift */,
+				6100445D444EF8F4C04EE3F8 /* SerialPort.swift */,
+				DF982BB3F47D55906064C7F0 /* SerialPortEnumerator.swift */,
+			);
+			path = Serial;
+			sourceTree = "<group>";
+		};
+		F105E9BE3F96F2E4E067C462 /* MobaXTermUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6916CE4DE56DD45366A18444 /* MobaXTermUITests.swift */,
+			);
+			path = MobaXTermUITests;
+			sourceTree = "<group>";
+		};
+		FE6B0F8CA227824DBF0E2E81 /* Terminal */ = {
+			isa = PBXGroup;
+			children = (
+				39A7B83BBB6C4B35381D5D40 /* SSHCommand.swift */,
+				3C91B585A9F63672F62C2A13 /* TerminalController.swift */,
+				EF30D66DF9B1692D2202CD84 /* TerminalHostView.swift */,
+			);
+			path = Terminal;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ABF402E01C52404C3FF34CCB /* MobaXTermUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EA274D632387F53611819DA /* Build configuration list for PBXNativeTarget "MobaXTermUITests" */;
+			buildPhases = (
+				41540DA7C39864F3221A2566 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				32A56792F1160C1B0E8DEEA7 /* PBXTargetDependency */,
+			);
+			name = MobaXTermUITests;
+			packageProductDependencies = (
+			);
+			productName = MobaXTermUITests;
+			productReference = D6A81AFF316949988A8D8C08 /* MobaXTermUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		B5EDB8A76C52205FBA691E10 /* MobaXTerm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3123A68AF41016057668D831 /* Build configuration list for PBXNativeTarget "MobaXTerm" */;
+			buildPhases = (
+				70D849FE1059D29ADCF333FF /* Sources */,
+				A376F92B0687100651F2BA7D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MobaXTerm;
+			packageProductDependencies = (
+				21EA3CAB74FE2613A192B60E /* SwiftTerm */,
+			);
+			productName = MobaXTerm;
+			productReference = 64D0D43E2BC61D2AA3E9F341 /* MobaXTerm.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F4984EA2E9197BF26CC86AC8 /* MobaXTermTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B49A86139A3ACBA9CB42F6D7 /* Build configuration list for PBXNativeTarget "MobaXTermTests" */;
+			buildPhases = (
+				5C8E7A528CC421070AA66092 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F0560FEB75812D72A83A8AA4 /* PBXTargetDependency */,
+			);
+			name = MobaXTermTests;
+			packageProductDependencies = (
+			);
+			productName = MobaXTermTests;
+			productReference = 080FA463557AF5AB762A85C5 /* MobaXTermTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B6233CCBED7E82A943E8AC01 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					ABF402E01C52404C3FF34CCB = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Manual;
+						TestTargetID = B5EDB8A76C52205FBA691E10;
+					};
+					B5EDB8A76C52205FBA691E10 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Manual;
+					};
+					F4984EA2E9197BF26CC86AC8 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 71CF99F9348E41F6AF182E92 /* Build configuration list for PBXProject "MobaXTerm" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 845850DC3E362959E856E906;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				CE946DE375E33B40304DC49F /* XCRemoteSwiftPackageReference "SwiftTerm" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 6386983E752ED8B4AA76739C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B5EDB8A76C52205FBA691E10 /* MobaXTerm */,
+				F4984EA2E9197BF26CC86AC8 /* MobaXTermTests */,
+				ABF402E01C52404C3FF34CCB /* MobaXTermUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		41540DA7C39864F3221A2566 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86B5C0F8D5E66140A41AD311 /* MobaXTermUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C8E7A528CC421070AA66092 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				681E206507C926CAEE6E0F0D /* SSHCommandTests.swift in Sources */,
+				79051E7A24190EAFFA5FFB92 /* SerialConfigTests.swift in Sources */,
+				6CCA6B598162B193E4D96D21 /* SessionStoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70D849FE1059D29ADCF333FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92CD375B4D7AC59F2266C46E /* AppModel.swift in Sources */,
+				52AF40F42B4826EFDD688C75 /* ContentView.swift in Sources */,
+				C849326777183C628EF4DD71 /* MobaXTermApp.swift in Sources */,
+				52386088E0515CFD168E5159 /* SSHCommand.swift in Sources */,
+				C1E24F0296328D90CE42C333 /* SerialConfig.swift in Sources */,
+				D1C2C3D6AF67FB4207DE7D9B /* SerialPort.swift in Sources */,
+				39761F934D37D2655B90FAFA /* SerialPortEnumerator.swift in Sources */,
+				4E2619C3981905FDF31D367E /* Session.swift in Sources */,
+				DD35144D1F3AB36B2D3BC1CE /* SessionEditor.swift in Sources */,
+				9D65D3EFAB8B5A1C6922A9CD /* SessionStore.swift in Sources */,
+				1C28193FE2DD82D937E47FCA /* SidebarView.swift in Sources */,
+				4F9E151645895F407CE04623 /* TerminalController.swift in Sources */,
+				75A25F8FDC8EB01E43E3EAB7 /* TerminalHostView.swift in Sources */,
+				9549D22B4A0DFD332A7F0D6B /* TerminalTabBar.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		32A56792F1160C1B0E8DEEA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5EDB8A76C52205FBA691E10 /* MobaXTerm */;
+			targetProxy = A8C9253892A7D83A3ADC55AB /* PBXContainerItemProxy */;
+		};
+		F0560FEB75812D72A83A8AA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5EDB8A76C52205FBA691E10 /* MobaXTerm */;
+			targetProxy = 997681EA40D33751F94FB408 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		356B434A3B9A831B0C58FDAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.mobaxterm.macos.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MobaXTerm.app/Contents/MacOS/MobaXTerm";
+			};
+			name = Release;
+		};
+		57CFC0C8D28769CC7EC4678E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MobaXTerm/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = local.mobaxterm.macos;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7337FCA25358F2A0AB96BBDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		8ADC0C7456958290DFFED9EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		930DD796AC2A27E6DB37DFEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.mobaxterm.macos.uitests;
+				SDKROOT = macosx;
+				TEST_TARGET_NAME = MobaXTerm;
+			};
+			name = Release;
+		};
+		CEAD64A09BA2728F33C58F25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.mobaxterm.macos.uitests;
+				SDKROOT = macosx;
+				TEST_TARGET_NAME = MobaXTerm;
+			};
+			name = Debug;
+		};
+		DD025A712DEE319325100E12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MobaXTerm/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = local.mobaxterm.macos;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EE1D9CAFF68FD7E7A0189BCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.mobaxterm.macos.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MobaXTerm.app/Contents/MacOS/MobaXTerm";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2EA274D632387F53611819DA /* Build configuration list for PBXNativeTarget "MobaXTermUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEAD64A09BA2728F33C58F25 /* Debug */,
+				930DD796AC2A27E6DB37DFEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3123A68AF41016057668D831 /* Build configuration list for PBXNativeTarget "MobaXTerm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57CFC0C8D28769CC7EC4678E /* Debug */,
+				DD025A712DEE319325100E12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		71CF99F9348E41F6AF182E92 /* Build configuration list for PBXProject "MobaXTerm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8ADC0C7456958290DFFED9EA /* Debug */,
+				7337FCA25358F2A0AB96BBDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B49A86139A3ACBA9CB42F6D7 /* Build configuration list for PBXNativeTarget "MobaXTermTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE1D9CAFF68FD7E7A0189BCA /* Debug */,
+				356B434A3B9A831B0C58FDAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE946DE375E33B40304DC49F /* XCRemoteSwiftPackageReference "SwiftTerm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/migueldeicaza/SwiftTerm";
+			requirement = {
+				kind = exactVersion;
+				version = 1.99.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		21EA3CAB74FE2613A192B60E /* SwiftTerm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE946DE375E33B40304DC49F /* XCRemoteSwiftPackageReference "SwiftTerm" */;
+			productName = SwiftTerm;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = B6233CCBED7E82A943E8AC01 /* Project object */;
+}
